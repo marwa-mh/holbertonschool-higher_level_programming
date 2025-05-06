@@ -5,8 +5,8 @@ str = f"Last digit of {number} is "
 comp = "and is 0"
 lastdigit = number % 10
 if number < 0:
-    lastdigit= -1 *number % 10
-    lastdigit = lastdigit * -1
+    lastdigit = -1 * number % 10
+    lastdigit = lastdigit * - 1
     comp = "and is less than 6 and not 0"
 if lastdigit == 0:
     comp = "and is 0"
