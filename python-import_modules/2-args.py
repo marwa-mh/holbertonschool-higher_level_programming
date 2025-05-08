@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 import sys
+
+
 def main():
     sep = ":"
     if len(sys.argv) == 2:
@@ -9,7 +11,7 @@ def main():
     if len(sys.argv) == 1:
         sep = "."
     print(f"{len(sys.argv) - 1} {argument}{sep}".format())
-    for i in range(1,len(sys.argv)):
+    for i in range(1, len(sys.argv)):
         print(f"{i}: {sys.argv[i]}".format())
 
 
