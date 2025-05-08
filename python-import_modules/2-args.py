@@ -5,7 +5,7 @@ def main():
         argument = "argument"
     else:
         argument = "arguments"
-    print(f"{len(sys.argv) - 1} {argument}".format())
+    print(f"{len(sys.argv) - 1} {argument}:".format())
     for i in range(1,len(sys.argv)):
         print(f"{i}: {sys.argv[i]}".format())
 
