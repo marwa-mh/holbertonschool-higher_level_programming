@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 from calculator_1 import add, sub, mul, div
-import sys
+from sys import argv
 
 
 def main():
-    if len(sys.argv) != 4:
+    if len(argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
-    a = int(sys.argv[1])
-    b = int(sys.argv[3])
-    operator = sys.argv[2]
+    a = int(argv[1])
+    b = int(argv[3])
+    operator = argv[2]
     result = 0
     if operator == "+":
         result = add(a, b)
