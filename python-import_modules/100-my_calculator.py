@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import calculator_1 as calc
+from calculator_1 import add, sub, mul, div
 import sys
 
 
@@ -12,13 +12,13 @@ def main():
     operator = sys.argv[2]
     result = 0
     if operator == "+":
-        result = calc.add(a, b)
+        result = add(a, b)
     elif operator == "-":
-        result = calc.sub(a, b)
+        result = sub(a, b)
     elif operator == "*":
-        result = calc.mul(a, b)
+        result = mul(a, b)
     elif operator == "/":
-        result = calc.div(a, b)
+        result = div(a, b)
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
