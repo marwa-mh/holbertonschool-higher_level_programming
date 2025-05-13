@@ -3,6 +3,14 @@ def roman_to_int(roman_string):
     roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
 
     sum = 0
+    found_I = False
     for s in roman_string:
-        sum = sum + roman.get(s)
+        if s == 'I':
+            found_I = True
+            continue
+        if s == 'V' or s == 'X' and found_I:
+            sum = sum - 1 + roman.get(s)
+        else:
+            found_I = False
+            sum = sum + roman.get(s)
     return sum
