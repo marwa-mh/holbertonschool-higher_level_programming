@@ -6,11 +6,14 @@ def roman_to_int(roman_string):
     found_I = False
     for s in roman_string:
         if s == 'I':
-            found_I = True
-            continue
-        if s == 'V' or s == 'X' and found_I:
-            sum = sum - 1 + roman.get(s)
+            found_I = True           
+        elif (s == 'V' or s == 'X') and found_I == True:
+            sum = sum - 2 
+            found_I = False
         else:
             found_I = False
-            sum = sum + roman.get(s)
+        sum = sum + roman.get(s)
+       
     return sum
+
+
