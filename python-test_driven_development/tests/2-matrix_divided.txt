@@ -14,6 +14,15 @@ Tests:
     >>> matrix_divided([[6]], 2)
     [[3.0]]
 
+    >>> matrix_divided([[6]])
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
     >>> matrix_divided([[6.70, 4], [10.3, 2.2]], 2)
     [[3.35, 2.0], [5.15, 1.1]]
 
