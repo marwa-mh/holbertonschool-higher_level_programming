@@ -17,6 +17,9 @@ Tests:
     >>> matrix_divided([[6.70, 4], [10.3, 2.2]], 2)
     [[3.35, 2.0], [5.15, 1.1]]
 
+    >>> matrix_divided([[1, 2], [3, 4]], float('inf'))
+    [[0.0, 0.0], [0.0, 0.0]]
+
     >>> matrix_divided([[6]], 0)
     Traceback (most recent call last):
     ...

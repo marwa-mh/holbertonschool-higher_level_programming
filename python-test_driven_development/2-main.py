@@ -7,4 +7,5 @@ matrix = [
 ]
 #print(matrix_divided(matrix, 3))
 #print(matrix)
-print(matrix_divided([[4],['a']], 2))
+#print(matrix_divided([[4],['a']], 2))
+print(matrix_divided([[1, 2], [3, 4]], float('inf')))
