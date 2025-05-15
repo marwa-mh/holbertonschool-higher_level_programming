@@ -1,0 +1,39 @@
+The ``matrix_divided`` module
+=============================
+
+Using ``matrix_divided``
+-----------------------
+
+
+First import ``matrix_divided`` from the ``2-matrix_divided`` file:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Tests:
+
+    >>> matrix_divided([[6]], 2)
+    [[3.0]]
+
+    >>> matrix_divided([[6.70, 4], [10.3, 2.2]], 2)
+    [[3.35, 2.0], [5.15, 1.1]]
+
+    >>> matrix_divided([[6]], 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+    >>> matrix_divided([[6]], 'x')
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+    >>> matrix_divided([[4],['a']], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[3, 2],[1, 2,3]], 4)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
