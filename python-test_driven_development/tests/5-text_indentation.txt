@@ -14,10 +14,9 @@ Test:
     TypeError: text must be a string
 
     >>> text_indentation('hello. cats')
-    hello
+    hello.
     <BLANKLINE>
     cats
-
     >>> text_indentation()
     Traceback (most recent call last):
     ...
