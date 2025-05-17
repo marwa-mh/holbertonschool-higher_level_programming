@@ -35,7 +35,7 @@ def matrix_mul(m_a, m_b):
         for element in row:
             if not isinstance(element, (int, float)):
                 raise TypeError("m_b should contain only integers or floats")
-    if len(m_a[0] != len(m_b)):
+    if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
     try:
         
