@@ -18,6 +18,8 @@ def matrix_mul(m_a, m_b):
     if not all(isinstance(ele, list) for ele in m_b):
         raise TypeError("m_b must be a list of lists")
     ma_col_len = len(m_a[0])
+    if ma_col_len == 0:
+        raise ValueError("m_a can't be empty")
     for row in m_a:
         if len(row) !=ma_col_len:
             raise TypeError("each row of m_a must be of the same size")
@@ -32,6 +34,7 @@ def matrix_mul(m_a, m_b):
             if not isinstance(element, (int, float)):
                 raise TypeError("m_b should contain only integers or floats")
     try:
+        
         result = [[sum(a*b for a,b in zip(X_row,Y_col)) for Y_col in zip(*m_b)] for X_row in m_a]
         return result
     except:
