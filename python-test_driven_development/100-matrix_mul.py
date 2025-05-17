@@ -31,10 +31,8 @@ def matrix_mul(m_a, m_b):
         for element in row:
             if not isinstance(element, (int, float)):
                 raise TypeError("m_b should contain only integers or floats")
-    if mb_col_len != ma_col_len:
-        raise ValueError("m_a and m_b can't be multiplied")
     try:
-        result = [[sum(a*b for a,b in zip(X_row,Y_col)) for Y_col in zip(*m_a)] for X_row in m_b]
+        result = [[sum(a*b for a,b in zip(X_row,Y_col)) for Y_col in zip(*m_b)] for X_row in m_a]
         return result
     except:
         raise ValueError("m_a and m_b can't be multiplied")
