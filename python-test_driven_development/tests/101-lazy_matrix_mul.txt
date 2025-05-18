@@ -9,7 +9,8 @@ First import ``lazy_matrix_mul`` from the ``101-lazy_matrix_mul``
 
 Test:
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
-    [[7, 10], [15, 22]]
+    array([[ 7, 10],
+           [15, 22]])
 
     >>> lazy_matrix_mul("matrix", [[1, 2], [3, 4]])
     Traceback (most recent call last):
