@@ -23,7 +23,7 @@ def lazy_matrix_mul(m_a, m_b):
             raise TypeError("each row of m_a must be of the same size")
         for element in row:
             if not isinstance(element, (int, float)):
-                raise TypeError("m_a should contain only integers or floats")
+                raise TypeError("invalid data type for einsum")
     mb_col_len = len(m_b[0])
     if mb_col_len == 0:
         raise ValueError("shapes (2,2) and (1,0) not aligned: 2 (dim 1) != 1 (dim 0)")
@@ -32,7 +32,7 @@ def lazy_matrix_mul(m_a, m_b):
             raise TypeError("each row of m_b must be of the same size")
         for element in row:
             if not isinstance(element, (int, float)):
-                raise TypeError("m_b should contain only integers or floats")
+                raise TypeError("invalid data type for einsum")
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
     result = np.dot(m_a, m_b)

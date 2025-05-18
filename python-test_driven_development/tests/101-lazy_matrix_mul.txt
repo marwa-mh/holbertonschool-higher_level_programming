@@ -44,12 +44,12 @@ Test:
     >>> lazy_matrix_mul([["matrix",'a'], [2, 'b']], [[1, 2], [3, 4]])
     Traceback (most recent call last):
     ...
-    TypeError: m_a should contain only integers or floats
+    TypeError: invalid data type for einsum
 
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [['test'],[1]])
     Traceback (most recent call last):
     ...
-    TypeError: m_b should contain only integers or floats
+    TypeError: invalid data type for einsum
 
     >>> lazy_matrix_mul([[1, 23, 4], [3]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
