@@ -10,7 +10,7 @@ def lazy_matrix_mul(m_a, m_b):
     multiply 2 matrixes using numpy
     """
     if not isinstance(m_a, list):
-        raise TypeError("m_a must be a list")
+        raise TypeError("Scalar operands are not allowed, use '*' instead")
     if not isinstance(m_b, list):
         raise TypeError("m_b must be a list")
     if not all(isinstance(ele, list) for ele in m_a):

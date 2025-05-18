@@ -14,7 +14,7 @@ Test:
     >>> lazy_matrix_mul("matrix", [[1, 2], [3, 4]])
     Traceback (most recent call last):
     ...
-    TypeError: m_a must be a list
+    TypeError: Scalar operands are not allowed, use '*' instead
 
     >>> lazy_matrix_mul([[1, 2], [3, 4]], 'test')
     Traceback (most recent call last):
