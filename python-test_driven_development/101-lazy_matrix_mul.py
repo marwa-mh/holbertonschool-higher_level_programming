@@ -20,7 +20,7 @@ def lazy_matrix_mul(m_a, m_b):
         raise ValueError("shapes (1,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)")
     for row in m_a:
         if len(row) !=ma_col_len:
-            raise TypeError("each row of m_a must be of the same size")
+            raise TypeError("setting an array element with a sequence.")
         for element in row:
             if not isinstance(element, (int, float)):
                 raise TypeError("invalid data type for einsum")
@@ -29,7 +29,7 @@ def lazy_matrix_mul(m_a, m_b):
         raise ValueError("shapes (2,2) and (1,0) not aligned: 2 (dim 1) != 1 (dim 0)")
     for row in m_b:
         if len(row) !=mb_col_len:
-            raise TypeError("each row of m_b must be of the same size")
+            raise TypeError("setting an array element with a sequence.")
         for element in row:
             if not isinstance(element, (int, float)):
                 raise TypeError("invalid data type for einsum")

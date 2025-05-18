@@ -54,12 +54,12 @@ Test:
     >>> lazy_matrix_mul([[1, 23, 4], [3]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
     ...
-    TypeError: each row of m_a must be of the same size
+    TypeError: setting an array element with a sequence.
     
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2],[4]])
     Traceback (most recent call last):
     ...
-    TypeError: each row of m_b must be of the same size
+    TypeError: setting an array element with a sequence.
 
     >>> lazy_matrix_mul([[1, 2,3], [3, 4,6]], [[1, 2,7,8],[4,3,5,6]])
     Traceback (most recent call last):
