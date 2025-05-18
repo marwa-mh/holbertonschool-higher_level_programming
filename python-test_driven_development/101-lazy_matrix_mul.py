@@ -26,7 +26,7 @@ def lazy_matrix_mul(m_a, m_b):
                 raise TypeError("m_a should contain only integers or floats")
     mb_col_len = len(m_b[0])
     if mb_col_len == 0:
-        raise ValueError("shapes (1,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)")
+        raise ValueError("shapes (2,2) and (1,0) not aligned: 2 (dim 1) != 1 (dim 0)")
     for row in m_b:
         if len(row) !=mb_col_len:
             raise TypeError("each row of m_b must be of the same size")
