@@ -17,7 +17,7 @@ def lazy_matrix_mul(m_a, m_b):
         raise TypeError("m_b must be a list of lists")
     ma_col_len = len(m_a[0])
     if ma_col_len == 0:
-        raise ValueError("m_a can't be empty")
+        raise ValueError("shapes (1,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)")
     for row in m_a:
         if len(row) !=ma_col_len:
             raise TypeError("each row of m_a must be of the same size")
@@ -26,7 +26,7 @@ def lazy_matrix_mul(m_a, m_b):
                 raise TypeError("m_a should contain only integers or floats")
     mb_col_len = len(m_b[0])
     if mb_col_len == 0:
-        raise ValueError("m_b can't be empty")
+        raise ValueError("shapes (1,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)")
     for row in m_b:
         if len(row) !=mb_col_len:
             raise TypeError("each row of m_b must be of the same size")
