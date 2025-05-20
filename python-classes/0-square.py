@@ -5,4 +5,7 @@ this module provide a class Square
 
 
 class Square:
+    """
+    empty class
+    """
     pass
