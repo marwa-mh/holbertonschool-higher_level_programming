@@ -2,6 +2,7 @@
 MyList = __import__('1-my_list').MyList
 
 my_list = MyList()
-
+my_list.append('A')
+my_list.append(2)
 my_list.print_sorted()
 print(my_list)
