@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """ returns the dictionary description with simple data structure """
-import json
 
 
-def class_to_json(obj):
+def class_to_json(obj: object):
     result: dict
-    result = json.dumps(obj.__dict__)
+    result = obj.__dict__
+    result = {k: v for k, v in result.items() if k not in {'_MyClass__name'}}
     return result
