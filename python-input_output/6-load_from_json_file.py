@@ -9,4 +9,4 @@ def load_from_json_file(filename):
     """
     with open(filename, "r") as outfile:
         data = outfile.read()
-    return json.dumps(data)
+    return json.loads(data)
