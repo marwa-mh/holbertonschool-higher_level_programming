@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+""" returns the dictionary description with simple data structure """
+import json
+
+
+def class_to_json(obj):
+    result: dict
+    result = json.dumps(obj.__dict__)
+    return result
