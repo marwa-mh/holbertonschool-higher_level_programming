@@ -3,6 +3,7 @@
 
 
 def calculate_row(arr: list):
+    """return the row depending on the previous one"""
     row = [1]
     for i in range(1, len(arr) + 1):
         if i > len(arr) - 1:
@@ -13,6 +14,7 @@ def calculate_row(arr: list):
 
 
 def pascal_triangle(n):
+    """calculate pascal triangle"""
     result: list = []
     if n <= 0:
         return result
