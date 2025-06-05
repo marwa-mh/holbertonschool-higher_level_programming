@@ -18,7 +18,7 @@ class Student:
         return t
 
     def reload_from_json(self, json):
-        if json !={}:
+        if json != {}:
             self.first_name = json['first_name']
             self.last_name = json['last_name']
             self.age = json['age']
