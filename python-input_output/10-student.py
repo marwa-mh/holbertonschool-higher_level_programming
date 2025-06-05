@@ -11,8 +11,9 @@ class Student:
     def to_json(self, attrs=None):
         rslt: dict
         rslt = self.__dict__
-        if isinstance(attrs, list) and all(isinstance(item, str) for item in attrs):
-            rslt = {k: v for k, v in rslt.items() if k  in {item for item in attrs}}
+        if isinstance(attrs, list) and all(isinstance(s, str) for s in attrs):
+            rslt = {k: v for k, v in rslt.items() if k in {s for s in attrs}}
         else:
-            rslt = {k: v for k, v in rslt.items() if k not in {'_MyClass__name'}}
+            result = {k: v for k, v in result.items()
+                      if k not in {'_MyClass__name'}}
         return rslt
