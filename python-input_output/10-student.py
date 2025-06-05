@@ -9,11 +9,10 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        rslt: dict
-        rslt = self.__dict__
+        t: dict
+        t = self.__dict__
         if isinstance(attrs, list) and all(isinstance(s, str) for s in attrs):
-            rslt = {k: v for k, v in rslt.items() if k in {s for s in attrs}}
+            t = {k: v for k, v in t.items() if k in {s for s in attrs}}
         else:
-            rslt = {k: v for k, v in rslt.items()
-                      if k not in {'_MyClass__name'}}
-        return rslt
+            t = {k: v for k, v in t.items() if k not in {'_MyClass__name'}}
+        return t
