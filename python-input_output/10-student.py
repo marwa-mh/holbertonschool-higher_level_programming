@@ -14,6 +14,6 @@ class Student:
         if isinstance(attrs, list) and all(isinstance(s, str) for s in attrs):
             rslt = {k: v for k, v in rslt.items() if k in {s for s in attrs}}
         else:
-            result = {k: v for k, v in result.items()
+            rslt = {k: v for k, v in rslt.items()
                       if k not in {'_MyClass__name'}}
         return rslt
