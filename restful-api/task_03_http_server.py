@@ -26,9 +26,9 @@ class SimpleAPI(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(data).encode())
         elif parsed_path == "/status":
             self.send_response(200)
-            self.send_header("Content-type", "application/json")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write(json.dumps({"status": "OK"}).encode())
+            self.wfile.write(b"OK")
         elif parsed_path == "/info":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
@@ -37,7 +37,10 @@ class SimpleAPI(http.server.BaseHTTPRequestHandler):
                     "description": "A simple API built with http.server"}
             self.wfile.write(json.dumps(info).encode())
         else:
-            self.send_error(404, "Endpoint not found")
+            self.send_response(404)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Endpoint not found")
 mysimpleApi = SimpleAPI
 if __name__ == "__main__":
     with socketserver.TCPServer(("", PORT), mysimpleApi) as httpd:
