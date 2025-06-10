@@ -2,7 +2,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 import json
 """Develop a simple API using Python with the `http.server` module"""
 
-PORT = 9005
+PORT = 8000
 
 
 class SimpleAPI(BaseHTTPRequestHandler):
