@@ -33,3 +33,9 @@ class SimpleAPI(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(info).encode())
         else:
             self.send_error(404, "Endpoint not found")
+
+
+if __name__ == "__main__":
+    httpd = HTTPServer(("", PORT), SimpleAPI)
+    print(f"Serving on port {PORT}...")
+    httpd.serve_forever
