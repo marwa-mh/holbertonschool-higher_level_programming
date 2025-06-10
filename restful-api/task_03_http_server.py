@@ -2,7 +2,9 @@
 import http.server
 import socketserver
 import json
+from urllib.parse import urlparse
 """Develop a simple API using Python with the `http.server` module"""
+
 
 PORT = 8000
 
@@ -10,23 +12,24 @@ PORT = 8000
 class SimpleAPI(http.server.BaseHTTPRequestHandler):
     """class SimpleAPI"""
     def do_GET(self):
-        if self.path.startswith("/"):
+        parsed_path = urlparse(self.path).path
+        if parsed_path == "/":
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write(b"Hello, this is a simple API!")
-        elif self.path.startswith("/data"):
+        elif parsed_path == "/data":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
             data = {"name": "John", "age": 30, "city": "New York"}
             self.wfile.write(json.dumps(data).encode())
-        elif self.path.startswith("/status"):
+        elif parsed_path == "/status":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
             self.wfile.write(json.dumps({"status": "OK"}).encode())
-        elif self.path == "/info":
+        elif parsed_path == "/info":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
