@@ -1,11 +1,13 @@
-from http.server import HTTPServer, BaseHTTPRequestHandler
+#!/usr/bin/python3
+import http.server
+import socketserver
 import json
 """Develop a simple API using Python with the `http.server` module"""
 
 PORT = 8000
 
 
-class SimpleAPI(BaseHTTPRequestHandler):
+class SimpleAPI(http.server.BaseHTTPRequestHandler):
     """class SimpleAPI"""
     def do_GET(self):
         if self.path.startswith("/"):
@@ -33,9 +35,8 @@ class SimpleAPI(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(info).encode())
         else:
             self.send_error(404, "Endpoint not found")
-
-
+mysimpleApi = SimpleAPI
 if __name__ == "__main__":
-    httpd = HTTPServer(("", PORT), SimpleAPI)
-    print(f"Serving on port {PORT}...")
-    httpd.serve_forever
+    with socketserver.TCPServer(("", PORT), mysimpleApi) as httpd:
+        print(f"Serving on port {PORT}...")
+        httpd.serve_forever()
