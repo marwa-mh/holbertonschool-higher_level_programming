@@ -24,7 +24,7 @@ def get_user(username: str):
     if user:
         return jsonify(user)
     else:
-        return jsonify({"error": "User not found"}), 400
+        return jsonify({"error": "User not found"}), 404
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
@@ -34,7 +34,8 @@ def add_user():
 
     if "username" not in req_data:
         return jsonify({"error": "Username is required"}), 400
-    
+    if req_data["username"] in users:
+        return jsonify({"error": "User already exists"}), 400
     users[req_data["username"]] = {
         "name": req_data["name"],
         "age": req_data["age"],
