@@ -47,4 +47,4 @@ def add_user():
     }
     return jsonify({"message":"user added", "user": output}), 201
 if __name__ == "__main__":
-    app.run(host="localhost", port=5001, debug=True)
+    app.run()
