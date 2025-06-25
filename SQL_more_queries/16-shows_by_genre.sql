@@ -1,8 +1,8 @@
 -- lists all shows, and all genres linked to that show
 SELECT ts.title, tg.name
 FROM tv_shows ts 
-LEFT OUTER JOIN tv_show_genres tsg 
+LEFT JOIN tv_show_genres tsg 
 ON ts.id =tsg.show_id 
-LEFT OUTER JOIN tv_genres tg 
+LEFT JOIN tv_genres tg 
 ON tsg.genre_id =tg.id
-ORDER BY title;
+ORDER BY ts.title, tg.name;
