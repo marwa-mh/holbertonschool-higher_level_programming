@@ -21,7 +21,8 @@ def main():
         db=dbname,
         charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE BINARY name LIKE 'N%' ORDER BY id ASC")
+    qstr = "SELECT * FROM states WHERE BINARY name LIKE 'N%' ORDER BY id ASC"
+    cur.execute(qstr)
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
