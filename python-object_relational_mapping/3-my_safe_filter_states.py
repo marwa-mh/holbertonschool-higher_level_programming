@@ -26,7 +26,6 @@ def main():
     cur = conn.cursor()
     qstr = "SELECT * FROM states"
     qstr += " WHERE BINARY name = %s ORDER BY id ASC"
-    
     cur.execute(qstr, (state_name,))
     query_rows = cur.fetchall()
     for row in query_rows:
