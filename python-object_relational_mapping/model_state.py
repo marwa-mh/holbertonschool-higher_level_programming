@@ -18,6 +18,9 @@ Class state using SQLAlchemy
 
 
 class State(Base):
+    """
+    Class state using SQLAlchemy
+    """
     __tablename__ = 'states'
     id = Column("id", Integer,
                 autoincrement="auto",
