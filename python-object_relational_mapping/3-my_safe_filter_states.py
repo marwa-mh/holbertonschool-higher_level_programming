@@ -2,6 +2,7 @@
 """
 displays all values in the states
 depend on name parameter
+prevent sql injection
 """
 
 
@@ -24,8 +25,9 @@ def main():
         charset="utf8")
     cur = conn.cursor()
     qstr = "SELECT * FROM states"
-    qstr += f" WHERE BINARY name LIKE '{state_name}' ORDER BY id ASC".format()
-    cur.execute(qstr)
+    qstr += " WHERE BINARY name = %s ORDER BY id ASC"
+    
+    cur.execute(qstr, (state_name,))
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
