@@ -33,7 +33,8 @@ if __name__ == "__main__":
 
     state_name = sys.argv[4]
     session = Session(engine)
-    state = session.query(State).where(State.name == state_name).order_by(State.id).first()
+    state = session.query(State).where(
+        State.name == state_name).order_by(State.id).first()
     if state is not None:
         print("{}".format(state.id))
     else:
