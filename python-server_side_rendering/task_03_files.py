@@ -28,24 +28,24 @@ def products():
     if source=='json':
         with open("products.json","r") as outfile:
             data = json.load(outfile)
-        print(data)
+        if request.args.get('id'):
+            find_item_by_id =[item for item in data if int(request.args.get('id')) == item['id']]
+            error =""
+            if not find_item_by_id:
+                error="Product not found"
     elif source=='csv':
-        try:
-            with open("products.csv", mode='r', newline='', encoding='utf-8') as csvfile:
-                data = list(csv.DictReader(csvfile))
-            
-        except Exception as e:
-            return render_template('product_display.html', items=[],error="Wrong source")
+        with open("products.csv", mode='r', newline='', encoding='utf-8') as csvfile:
+            data = list(csv.DictReader(csvfile))
+        if request.args.get('id'):
+            find_item_by_id =[item for item in data if request.args.get('id') == item['id']]
+            error =""
+            if not find_item_by_id:
+                error="Product not found"
     else:
         return render_template('product_display.html', items=[], error="Wrong source")
-    
-    if request.args.get('id'):
-        id = request.args.get('id')
-        find_item_by_id =[item for item in data if id in item['id']]
-        error =""
-        if not find_item_by_id:
-            error="Product not found"
     return render_template('product_display.html', items=find_item_by_id,error=error)
+
+    
     
 
 
