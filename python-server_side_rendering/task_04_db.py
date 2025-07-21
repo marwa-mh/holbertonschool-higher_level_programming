@@ -54,6 +54,8 @@ def products():
         SELECT * FROM Products
         ''')
         rows = cursor.fetchall()
+        if len(rows) == 0:
+            error="Product not found"
         columns = [column[0] for column in cursor.description]
         data = [dict(zip(columns, row)) for row in rows]
         conn.close()
