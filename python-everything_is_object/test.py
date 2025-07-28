@@ -1,2 +1,2 @@
 a="string"
-print(type(a))
+print(id(a))
