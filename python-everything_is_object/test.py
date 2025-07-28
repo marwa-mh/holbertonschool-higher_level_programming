@@ -1,2 +1,3 @@
-a="string"
-print(id(a))
+a = ()
+b = ()
+print(a is b)
